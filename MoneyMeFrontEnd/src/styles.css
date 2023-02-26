@@ -1,0 +1,262 @@
+.container-outer{
+  color: grey !important;
+  border-radius: 8px;
+  border: 1px solid lightskyblue;
+  margin: 0 auto;
+  padding: 10px 10px 10px 0px;
+  box-shadow: 0px 10px 10px lightgrey;
+}
+
+.container-inner{
+  color: grey !important;
+  border-color:aqua;
+  margin: 20px auto 20px auto;
+}
+
+.container-inner input, select {
+  border-style: hidden hidden solid hidden;
+  border-color:lightgray;
+  font-size: large !important;
+  margin: 5px;
+  margin-top:8px !important;
+  border-width: 2px;
+  color: grey;
+}
+
+.container-inner input:focus {
+  outline: none;
+}
+
+.container-inner input:valid {
+  color: grey;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(20,193,187) !important;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(20,193,187) !important;
+  cursor: pointer;
+}
+
+.slider-container {
+  position: relative;
+  color: rgb(20,193,187);
+}
+
+.slider-value {
+  width: 100%;
+  pointer-events: none; /* prevent the element from interfering with slider input */
+  user-select: none; /* prevent the element from being selected */
+}
+
+.bubble {
+  position: relative;
+  width: 90px;
+  height: 40px;
+  background: rgb(20,193,187);
+  border-radius: 5px;
+  text-align: center;
+  padding-top:8px;
+  color: white;
+}
+
+.bubble:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 10px solid rgb(20,193,187);
+  border-bottom: 15px solid transparent;
+  left: 40%;
+  bottom: -20px;
+}
+
+.lightblue{
+  color: rgb(20,193,187);
+}
+
+.lightgreen{
+  color: rgb(77,212,53);
+}
+
+.grid-container-3s {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  margin-top:-10px;
+}
+
+.grid-container-3 {
+  display: flex;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  margin-top:-10px;
+}
+
+.grid-container-3 input{
+  width: 100%;
+}
+
+.title{
+  color: rgb(20,193,187);
+  position: relative;
+}
+
+input[type="date"] {
+  color: grey;
+  width: 130px !important;
+}
+
+.w-130{
+  width:130px !important;
+  margin-left: 10px;
+  float: right;
+}
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.grid-container-2 input{
+  width: 100%;
+}
+
+.grid-container-2s {
+  display: grid;
+  grid-template-columns: auto auto;
+  border-color:lightgray;
+  font-size: medium;
+  margin: 5px;
+}
+
+.grid-container-2s div:last-child{
+  float: right;
+  border-style: hidden;
+  text-align: end;
+  color:gray;
+}
+
+.grid-container-2m {
+  display: grid;
+  grid-template-columns: auto auto;
+  border-color:lightgray;
+  font-size: large;
+}
+
+.grid-container-2m input{
+  float: right;
+  border-style: hidden;
+  text-align: end;
+  color:gray;
+}
+
+.grid-container-2m label{
+  font-weight: 500;
+  margin-top:10px;
+}
+
+.grid-container-2m input[type=button]{
+  color: rgb(20,193,187) !important;
+  background-color: white;
+  font-size: medium;
+}
+
+.grid-container-2f {
+  display: grid;
+  grid-template-columns: auto auto;
+  border-color:lightgray;
+  font-size: large;
+}
+
+.grid-container-2f div:last-child{
+  float: right;
+  border-style: hidden;
+  text-align: end;
+  color:gray;
+}
+
+.grid-container-3f {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+}
+
+.hypen {
+  border-color:lightgray;
+  font-size: medium;
+  margin: -8px 5px 5px 5px;
+  gap: 5px;
+}
+
+.hypen hr{
+  border-top: 1px dashed black !important;
+  margin-top: 12px;
+}
+
+.hypen div{
+  background-color: white;
+  float: right;
+  margin-top: -27px;
+  text-align: right;
+  color:gray;
+  font-size: small;
+  position: relative;
+  padding: 0px 0px 0px 10px
+}
+
+.button{
+  background-color: rgb(77,212,53);
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 10px 10px gray;
+}
+
+.reminder{
+  font-size: smaller;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.spacer{
+  height:35px;
+}
+
+.error{
+  color:red;
+}

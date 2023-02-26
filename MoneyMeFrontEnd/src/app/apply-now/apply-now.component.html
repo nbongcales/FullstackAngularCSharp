@@ -1,0 +1,84 @@
+<div class="container-outer" style="width:601px">
+  <div class="container-inner" style="width:500px">
+    <h1 class="text-center">Your quote</h1>
+      <div class="spacer"></div>
+      <div class="grid-container-2m">
+        <div>
+          <label for="Name">Your information</label>
+        </div>
+        <div>
+          <input type="button" value="Edit" (click)="editInfo()">
+        </div>
+      </div>
+      <div class="grid-container-2s">
+        <div>
+          <label for="Name">Name</label>
+        </div>
+        <div>
+          <label name="Name">{{getQuoteResponse.name}}</label>
+        </div>
+      </div>
+      <div class="grid-container-2s">
+        <div>
+          <label for="Mobile">Mobile</label>
+        </div>
+        <div>
+          <label name="Mobile">{{getQuoteResponse.mobile}}</label>
+        </div>
+      </div>
+      <div class="grid-container-2s">
+        <div>
+          <label for="Email">Email</label>
+        </div>
+        <div>
+          <label name="Email">{{getQuoteResponse.email}}</label>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="grid-container-2m">
+        <div>
+          <label for="Name">Finance details</label>
+        </div>
+        <div>
+          <input type="button" value="Edit" (click)="editInfo()">
+        </div>
+      </div>
+      <div class="grid-container-2f">
+        <div>
+          <label for="FinanceAmount">Finance amount</label>
+        </div>
+        <div>
+          <label name="FinanceAmount">{{formatCurrency(getQuoteResponse.financeAmount)}}</label>
+        </div>
+      </div>
+      <div class="hypen">
+        <hr/>
+        <div>
+          <label>{{formatMonth(getQuoteResponse.term)}}</label>
+        </div>
+      </div>
+      <div class="grid-container-2f">
+        <div>
+          <label for="Repayment">Repayment from</label>
+        </div>
+        <div>
+          <label name="Repayment" id="Repayment">{{formatCurrency(getQuoteResponse.repaymentsFrom)}}</label>
+        </div>
+      </div>
+      <div class="hypen">
+        <hr/>
+        <div>
+          <label>{{getQuoteResponse.paymentType}}</label>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="text-center">
+        <button class="button" (click)="applyLoan()">Apply Now</button><br/>
+        <label class="reminder">
+          Total repayment {{formatCurrency(getQuoteResponse.totalRepayments)}}, made up of an establishment fee of {{formatCurrency(getQuoteResponse.establishmentFee)}},
+          interest of {{formatCurrency(getQuoteResponse.interest)}}. The repayment amount is based on the variables
+          selected, is subject to our assessment and suitability and other important
+        terms and conditions apply.</label>
+      </div>
+  </div>
+</div>

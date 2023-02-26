@@ -1,0 +1,110 @@
+<div class="container-outer" style="width:601px">
+  <div class="container-inner" style="width:500px">
+    <h1 class="text-center">Quote Calculator</h1>
+    <div class="spacer"></div>
+    <label for="product" class="lightblue">Products</label>
+    <div>
+      <select name="product" id="product" style="width:100%" required>
+        <option value="ProductA">Product A</option>
+        <option value="ProductB">Product B</option>
+        <option value="ProductC">Product C</option>
+      </select>
+    </div>
+    <div class="spacer"></div>
+    <div class="slide-container">
+      <p id="amountVal" class="slider-value bubble">${{ amountValue }}</p>
+      <input type="range" id="amount" [(ngModel)]="quoteRequest.amountRequired"
+                          min="2100" max="15000" step="100" class="slider"
+                          (input)="updateSlider()">
+    </div>
+    <div class="grid-container-3f">
+      <div>$2,100</div>
+      <div>How much do you need?</div>
+      <div>$15,000</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="slide-container">
+      <p id="termVal" class="slider-value bubble">{{ checkMonth(termValue) }}</p>
+      <input type="range" id="term" [(ngModel)]="quoteRequest.term"
+                          min="1" max="36" value="1" class="slider"
+                          (input)="updateSlider()">
+    </div>
+    <div class="grid-container-3f">
+      <div>1 Month</div>
+      <div>Payment Term</div>
+      <div>36 Months</div>
+    </div>
+    <div class="spacer"></div>
+    <label for="title" class="title">Title</label><br/>
+    <div class="grid-container-3">
+      <div>
+        <select name="title" id="title" [(ngModel)]="quoteRequest.title" required>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Mrs.">Mrs.</option>
+        </select>
+        <div class="error" *ngIf="!quoteRequest.title && showError">*</div>
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="quoteRequest.firstName" id="firstname"
+                            name="firstname" placeholder="First name" required>
+        <div class="error" *ngIf="!quoteRequest.firstName && showError">*</div>
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="quoteRequest.lastName" id="lastname"
+                            name="lastname" placeholder="Last name" required>
+        <div class="error" *ngIf="!quoteRequest.lastName && showError">*</div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <label for="dateOfBirth" class="title">Date of birth</label><br/>
+    <div>
+      <input type="date" [(ngModel)]="quoteRequest.dateOfBirth" id="dateOfBirth"
+                          name="dateOfBirth" value="1990-01-01"
+                          placeholder="Date of birth" required>
+      <div class="error" *ngIf="!quoteRequest.dateOfBirth && showError">*</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="grid-container-2">
+      <div>
+        <input type="text" [(ngModel)]="quoteRequest.email" id="email" name="email" placeholder="Your email" required>
+        <div class="error" *ngIf="!quoteRequest.email && showError">*</div>
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="quoteRequest.mobile" id="mobile" name="mobile" placeholder="Mobile number" required>
+        <div class="error" *ngIf="!quoteRequest.mobile && showError">*</div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="error" *ngIf="showError">One or more field(s) are missing!</div>
+    <div class="spacer"></div>
+    <div class="text-center">
+      <button class="button" type="submit" (click)="validate(modalContent)">Calculate quote</button><br/>
+      <label class="reminder">Quote does not affect your credit score</label>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Errors</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>amountRequired: {{ quoteRequest.amountRequired }}</p>
+    <p>term: {{ quoteRequest.term }}</p>
+    <p>title: {{ quoteRequest.title }}</p>
+    <p>firstName: {{ quoteRequest.firstName }}</p>
+    <p>lastName: {{ quoteRequest.lastName }}</p>
+    <p>dateOfBirth: {{ quoteRequest.dateOfBirth }}</p>
+    <p>email: {{ quoteRequest.email }}</p>
+    <p>mobile: {{ quoteRequest.mobile }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</ng-template>
+
