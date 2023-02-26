@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'MoneyMeFrontEnd';
   constructor(private http: HttpClient, private router: Router){
-    // this.router.navigate([`${'quoteCalculator'}`]);
+    this.router.navigate([`${'quoteCalculator'}`]);
     // this.router.navigate(['/apply-now'], { queryParams: { QuoteId: '1002', CustomerId: '3' } });
-    this.router.navigate(['/apply-now'], { queryParams: { QuoteId: '2', CustomerId: '2' } });
+    // this.router.navigate(['/apply-now'], { queryParams: { QuoteId: '2', CustomerId: '2' } });
   }
 }
